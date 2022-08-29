@@ -17,6 +17,9 @@ class PegawaiController extends Controller
     public function index()
     {
         $pegawais = Pegawai::paginate(5);
+        if (request("search")) {
+            $pegawais = Pegawai::filter(request(["search"]))->paginate(5);
+        }
         $jabatans = Jabatan::get();
         $golongans = Golongan::get();
         $unit_kerjas = UnitKerja::get();

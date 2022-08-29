@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jabatan extends Model
 {
-    public $fillable = ["nama"];
+    protected $primaryKey = 'id';
+
+    public $fillable = ["nama", "id"];
     use HasFactory;
 }

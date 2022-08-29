@@ -21,7 +21,6 @@ class UnitKerjaController extends Controller
     public function store(UnitKerjaPostRequest $request)
     {
         $attr = $request->validated();
-
         UnitKerja::create($attr);
         return redirect()->back()->with("success", "Berhasil menambahkan data unit_kerja");
     }

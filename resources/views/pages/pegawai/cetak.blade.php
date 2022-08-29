@@ -23,7 +23,8 @@
             top: -60px;
             left: 0px;
             right: 0px;
-            background-color: lightblue;
+            /* background-color: lightblue; */
+            border-bottom: 2px solid black;
             box-sizing: border-box;
             height: 140px;
         }
@@ -152,12 +153,12 @@
                     <td>{{ $pg->alamat }}</td>
                     <td>{{ $pg->tgl_lahir }}</td>
                     <td>{{ $pg->jenis_kelamin }}</td>
-                    <td>Gol</td>
+                    <td>{{ $pg->golongan->nama }}</td>
                     <td>{{ $pg->eselon }}</td>
-                    <td>Jabatan</td>
-                    <td>Tempat Tugas</td>
+                    <td>{{ $pg->jabatan->nama }}</td>
+                    <td>{{ $pg->unit_kerja->tempat_tugas }}</td>
                     <td>{{ $pg->alamat }}</td>
-                    <td>Unit Kerja</td>
+                    <td>{{ $pg->unit_kerja->nama }}</td>
                     <td>{{ $pg->no_hp }}</td>
                     <td>{{ $pg->npwp }}</td>
                 </tr>

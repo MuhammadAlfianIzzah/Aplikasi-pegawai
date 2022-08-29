@@ -16,6 +16,15 @@
                             <small class="badge badge-info">NPWP / NIP / Eselon</small> {{ $pegawai->npwp }} |
                             {{ $pegawai->nip }} | {{ $pegawai->eselon }}
                         </p>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <p>Jabatan: {{ $pegawai->jabatan->nama }} || Golongan: {{ $pegawai->golongan->nama }}
+                                </p>
+                                <p>Unit Kerja: {{ $pegawai->unit_kerja->nama }} || Tugas Kerja:
+                                    {{ $pegawai->unit_kerja->tempat_tugas }}
+                                </p>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-body">
                                 <table class="table">
@@ -42,7 +51,7 @@
                                 </table>
                             </div>
                         </div>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
                     </div>
                 </div>
             </div>

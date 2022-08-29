@@ -3,10 +3,30 @@
         Halaman kelola pegawai
     </x-slot>
     {{-- {{ dd($pegawai) }} --}}
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahpegawai">
-        <i class="fa-solid fa-plus"></i> Tambah
-    </button>
-    <a href="{{ route('cetak-pegawai') }}" class="btn btn-success">Cetak</a>
+
+    <div class="row py-4">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahpegawai">
+                <i class="fa-solid fa-plus"></i> Tambah
+            </button>
+
+            <a href="{{ route('cetak-pegawai') }}" class="btn btn-success"> <i class="fa-solid fa-file-pdf"></i> Cetak</a>
+        </div>
+        <div class="col-6">
+            <form action="" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control border-0 small" placeholder="Search for name|npwp|nip..."
+                        aria-label="Search" name="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="bg-white px-3 py-4">
         <table class="table table-hover">
             <thead>
@@ -14,6 +34,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nip</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Unit kerja</th>
                     <th scope="col">Eselon</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Action</th>
@@ -25,6 +46,7 @@
                         <th scope="row">{{ $key + 1 }}</th>
                         <td>{{ $pg->nip }}</td>
                         <td>{{ $pg->nama }}</td>
+                        <td>{{ $pg->unit_kerja->nama }}</td>
                         <td>{{ $pg->eselon }}</td>
                         <td>
                             <img style="width: 100px" src="{{ asset("storage/$pg->foto") }}" alt="">

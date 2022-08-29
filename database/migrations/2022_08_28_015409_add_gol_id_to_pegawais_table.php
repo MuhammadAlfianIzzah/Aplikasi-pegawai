@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::table('pegawais', function (Blueprint $table) {
             $table->string('gol_id')->after("nama");
-            $table->foreign('gol_id')->references('kode')->on('golongans');
+            $table->foreign('gol_id')->references('kode')->on('golongans')->onDelete("cascade");
             $table->unsignedBigInteger('jabatan_id');
-            $table->foreign('jabatan_id')->references('id')->on('jabatans');
+            $table->foreign('jabatan_id')->references('id')->on('jabatans')->onDelete("cascade");
 
             $table->unsignedBigInteger('unit_kerja_id');
-            $table->foreign('unit_kerja_id')->references('id')->on('unit_kerjas');
+            $table->foreign('unit_kerja_id')->references('id')->on('unit_kerjas')->onDelete("cascade");
         });
     }
 
@@ -32,7 +32,12 @@ return new class extends Migration
     public function down()
     {
         Schema::table('pegawais', function (Blueprint $table) {
-            //
+            $table->dropForeign(["jabatan_id"]);
+            $table->dropColumn("jabatan_id");
+            $table->dropForeign(["unit_kerja_id"]);
+            $table->dropColumn("unit_kerja_id");
+            $table->dropForeign(["gol_id"]);
+            $table->dropColumn("gol_id");
         });
     }
 };

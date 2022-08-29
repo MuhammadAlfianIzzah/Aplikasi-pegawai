@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <i class="fa-solid fa-user-tie"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Sistem Pegawai</div>
     </a>
 
     <!-- Divider -->
@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -43,7 +43,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#golongan" aria-expanded="true"
             aria-controls="golongan">
-            <i class="fa-solid fa-people-group"></i>
+            <i class="fa-solid fa-stethoscope"></i>
             <span>Kelola Golongan</span>
         </a>
         <div id="golongan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -56,7 +56,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#jabatan" aria-expanded="true"
             aria-controls="jabatan">
-            <i class="fa-solid fa-people-group"></i>
+            <i class="fa-solid fa-stethoscope"></i><i class="fa-solid fa-user-tie"></i>
             <span>Kelola jabatan</span>
         </a>
         <div id="jabatan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -69,7 +69,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#unit_kerja"
             aria-expanded="true" aria-controls="unit_kerja">
-            <i class="fa-solid fa-people-group"></i>
+            <i class="fa-solid fa-suitcase"></i>
             <span>Kelola unit_kerja</span>
         </a>
         <div id="unit_kerja" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -77,23 +77,6 @@
                 <a class="collapse-item" href="{{ route('unit_kerja') }}">kelola Kerja</a>
             </div>
         </div>
-    </li>
-
-
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
     </li>
 
     <!-- Divider -->

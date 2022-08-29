@@ -25,9 +25,13 @@
 
                         <td>
                             <div class="btn-group" role="group">
+                                <a href="{{ route('show-unit_kerja', [$uk->id]) }}" class="btn btn-primary">
+                                    <i class="fa-solid fa-arrows-down-to-people"></i>
+                                </a>
                                 <a href="{{ route('edit-unit_kerja', [$uk->id]) }}" class="btn btn-warning">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
+
                                 <form action="{{ route('delete-unit_kerja', [$uk->id]) }}" method="POST">
                                     @csrf
                                     @method('delete')
